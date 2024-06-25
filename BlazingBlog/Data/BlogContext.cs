@@ -29,11 +29,11 @@ namespace BlazingBlog.Data
                     new User
                     {
                         Id = 1,
-                        Email = "abhayprince@outlook.com",
-                        FirstName = "Abhay",
-                        LastName = "Prince",
-                        Salt = "dshfksdhfk",
-                        Hash = "dfhkhsdskdfffgfjgfjgkdfhjgkdf/="
+                        Email = "sachinthanabuddhika79@gmail.com",
+                        FirstName = "Cydex",
+                        LastName = "Code",
+                        Salt = "cydexcode123",
+                        Hash = "dfhkhsdskdfffgfjgfjgkdf/="
                     }
                 );
         }
