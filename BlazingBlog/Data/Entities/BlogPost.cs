@@ -20,6 +20,8 @@ namespace BlazingBlog.Data.Entities
         [Required, MaxLength(250)]
         public string Introduction { get; set; }
 
+     
+
         [Required]
         public string Content { get; set; }
 

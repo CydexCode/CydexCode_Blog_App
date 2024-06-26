@@ -4,7 +4,7 @@
 @attribute [Authorize]
 
 @using Blazored.TextEditor
-
+@inject IJSRuntime JS
 @inject CategoryService CategoryService
 @inject BlogPostService BlogPostService
 @inject BlogAuthenticationStateProvider BlogAuthStateProvider
@@ -64,6 +64,8 @@
                         <ValidationMessage For="()=> model.Introduction" />
                     </div>
 
+                  
+
                     <div class="mb-3">
                         <label class="form-label">Content: </label>
 
@@ -93,7 +95,9 @@
                                 </span>
                                 <span class="ql-formats">
                                     <button class="ql-link"></button>
+                                   
                                 </span>
+                             
                             </ToolbarContent>
                             <EditorContent>
                                 @((MarkupString)model.Content)
@@ -102,6 +106,7 @@
 
                         <ValidationMessage For="()=> model.Content" />
                     </div>
+
 
                     <div class="mb-3">
                         <div class="form-check form-switch">
@@ -155,11 +160,11 @@
             categories = categoriesList;
         }
 
-        if(BlogId > 0)
+        if (BlogId > 0)
         {
             // We are in edit mode
             var dbModel = await BlogPostService.GetPostAsync(BlogId);
-            if(dbModel is null)
+            if (dbModel is null)
             {
                 errorMessage = "Invalid url";
             }
@@ -169,6 +174,9 @@
             }
         }
     }
+
+
+
 
     private async Task SaveBlogAsync()
     {
